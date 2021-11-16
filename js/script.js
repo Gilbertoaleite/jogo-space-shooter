@@ -156,6 +156,7 @@ startButton.addEventListener('click', (event) => {
 });
 
 function playGame() {
+	$('#fim').remove();
 	startButton.style.display = 'none';
 	instructionsText.style.display = 'none';
 	window.addEventListener('keydown', flyShip);
@@ -163,6 +164,24 @@ function playGame() {
 		createAliens();
 	}, 2000);
 }
+
+// //função de game over
+// function gameOver() {
+// 	window.removeEventListener('keydown', flyShip);
+// 	clearInterval(alienInterval);
+// 	let aliens = document.querySelectorAll('.alien');
+// 	aliens.forEach((alien) => alien.remove());
+// 	let lasers = document.querySelectorAll('.laser');
+// 	lasers.forEach((laser) => laser.remove());
+// 	setTimeout(() => {
+// 		alert('O Palmeiras não tem mundial!');
+// 		yourShip.style.top = '250px';
+// 		startButton.style.display = 'block';
+// 		instructionsText.style.display = 'block';
+// 	});
+// }
+
+// }
 
 //função de game over
 function gameOver() {
@@ -173,9 +192,15 @@ function gameOver() {
 	let lasers = document.querySelectorAll('.laser');
 	lasers.forEach((laser) => laser.remove());
 	setTimeout(() => {
-		alert('O Palmeiras não tem mundial!');
-		yourShip.style.top = '250px';
-		startButton.style.display = 'block';
-		instructionsText.style.display = 'block';
+		// alert('O Palmeiras não tem mundial!');
+		// yourShip.style.top = '250px';
+		// startButton.style.display = 'block';
+		// instructionsText.style.display = 'block';
+		$('#main-play-area').append("<div id='fim'></div>");
+		$('#fim').html(
+			'<h4><a target="_blank" href="https://gilbertoaleite-portfolio.netlify.app/">Desenvolvido por: Gilberto A. Leite</a></h4> ' +
+				'<h1> O Palmeiras não tem mundial! </h1>' +
+				"<div><button onclick='self.playGame()'>Jogar Novamente</button></div > ",
+		);
 	});
 }

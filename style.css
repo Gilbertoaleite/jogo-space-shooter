@@ -66,3 +66,32 @@ body {
 	position: relative;
 	opacity: 0;
 }
+
+#fim {
+	width: 350px;
+	height: 200px;
+	background-color: #eeee;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 100px;
+	text-align: center;
+	padding: 10px;
+	color: green;
+}
+
+h4 a {
+	font-family: Titulo;
+	font-size: 14px;
+	color: green;
+	text-decoration: none;
+}
+
+button {
+	color: #eee;
+	background: orange;
+	border-radius: 9px;
+}
+
+button:hover {
+	background: green;
+}
